@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
 // Public Route Component (redirects to dashboard if already logged in)
 const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <Navigate to="/dashboard" /> : children;
+  return isAuthenticated ? <Navigate to="/" /> : children;
 };
 
 function App() {
@@ -35,14 +35,6 @@ function App() {
                   {/* Protected Routes */}
                   <Route
                     path="/"
-                    element={
-                      <ProtectedRoute>
-                        <TodoDashboard />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/dashboard"
                     element={
                       <ProtectedRoute>
                         <TodoDashboard />
