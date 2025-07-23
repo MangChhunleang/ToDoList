@@ -43,6 +43,15 @@ app.use('/api/auth', authRoutes);
 app.use('/api/auth', googleAuthRoutes);
 app.use('/api/todos', todoRoutes);
 
+// Serve frontend static files
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Catch-all to serve index.html for React Router (non-API routes)
+app.get(/^((?!\/api).)*$/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'SecureAuth API is running!' });

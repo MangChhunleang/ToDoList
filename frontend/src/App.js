@@ -6,10 +6,7 @@ import Register from './components/Register';
 import Navbar from './components/Navbar';
 import GoogleCallback from './components/GoogleCallback';
 import { TodoProvider } from './context/TodoContext';
-import TodoList from './components/TodoList';
-import TodoForm from './components/TodoForm';
 import TodoDashboard from './components/TodoDashboard';
-import Sidebar from './components/Sidebar';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
