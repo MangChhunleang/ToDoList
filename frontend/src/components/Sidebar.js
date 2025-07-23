@@ -4,13 +4,13 @@ import { useAuth } from '../context/AuthContext';
 import { useTodos } from '../context/TodoContext';
 
 const navLinks = [
-  { name: 'All Tasks', to: '/dashboard', icon: (
+  { name: 'All Tasks', to: '/', icon: (
     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
   ) },
-  { name: 'Completed', to: '/dashboard?filter=completed', icon: (
+  { name: 'Completed', to: '/?filter=completed', icon: (
     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
   ) },
-  { name: 'Important', to: '/dashboard?filter=important', icon: (
+  { name: 'Important', to: '/?filter=important', icon: (
     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   ) },
 ];

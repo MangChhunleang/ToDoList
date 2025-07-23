@@ -30,7 +30,7 @@ const GoogleCallback = () => {
         axios.get('/api/auth/profile')
           .then(response => {
             // Redirect to dashboard
-            navigate('/dashboard');
+            navigate('/');
           })
           .catch(error => {
             console.error('Error getting user profile:', error);
