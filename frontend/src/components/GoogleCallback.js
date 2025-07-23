@@ -6,7 +6,7 @@ import axios from 'axios';
 const GoogleCallback = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { login } = useAuth();
+  // const { login } = useAuth();
 
   useEffect(() => {
     const token = searchParams.get('token');
