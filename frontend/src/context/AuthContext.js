@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
 const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -15,10 +17,6 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // API base URL - works for both development and production
-  const apiUrl = process.env.REACT_APP_API_URL;
-  window.location.href = `${apiUrl}/api/auth/google`;
 
   useEffect(() => {
     getProfile();
