@@ -8,12 +8,6 @@ import GoogleCallback from './components/GoogleCallback';
 import { TodoProvider } from './context/TodoContext';
 import TodoDashboard from './components/TodoDashboard';
 
-// Protected Route Component
-const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? children : <Navigate to="/login" />;
-};
-
 // Public Route Component (redirects to dashboard if already logged in)
 const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
