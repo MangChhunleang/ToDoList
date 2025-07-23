@@ -9,10 +9,10 @@ import { TodoProvider } from './context/TodoContext';
 import TodoDashboard from './components/TodoDashboard';
 
 // Protected Route Component
-// const ProtectedRoute = ({ children }) => {
-//   const { isAuthenticated } = useAuth();
-//   return isAuthenticated ? children : <Navigate to="/login" />;
-// };
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? children : <Navigate to="/login" />;
+};
 
 // Public Route Component (redirects to dashboard if already logged in)
 const PublicRoute = ({ children }) => {
@@ -28,30 +28,49 @@ function App() {
           {/* Fixed full-screen background gradient */}
           <div className="fixed inset-0 -z-10 min-h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
           <TodoProvider>
-            {/* <Sidebar /> */}
             <div className="flex-1 ml-0">
               <Navbar />
               <div className="container mx-auto px-4 py-8">
                 <Routes>
-                  <Route path="/" element={<TodoDashboard />} />
-                  <Route path="/dashboard" element={<TodoDashboard />} />
-                  <Route 
-                    path="/login" 
+                  {/* Protected Routes */}
+                  <Route
+                    path="/"
+                    element={
+                      <ProtectedRoute>
+                        <TodoDashboard />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/dashboard"
+                    element={
+                      <ProtectedRoute>
+                        <TodoDashboard />
+                      </ProtectedRoute>
+                    }
+                  />
+
+                  {/* Public Routes */}
+                  <Route
+                    path="/login"
                     element={
                       <PublicRoute>
                         <Login />
                       </PublicRoute>
-                    } 
+                    }
                   />
-                  <Route 
-                    path="/register" 
+                  <Route
+                    path="/register"
                     element={
                       <PublicRoute>
                         <Register />
                       </PublicRoute>
-                    } 
+                    }
                   />
                   <Route path="/auth/google/callback" element={<GoogleCallback />} />
+
+                  {/* 404 Not Found */}
+                  <Route path="*" element={<div className="text-center text-2xl text-gray-500">404 - Page Not Found</div>} />
                 </Routes>
               </div>
             </div>
