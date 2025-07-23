@@ -13,7 +13,8 @@ const app = express();
 // CORS configuration for production
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://secure-auth-ozz2.onrender.com'
+  'https://secure-auth-ozz2.onrender.com',
+  'https://listtodoss.netlify.app'
 ];
 const corsOptions = {
   origin: allowedOrigins,
