@@ -26,7 +26,6 @@ router.get('/google/callback', (req, res, next) => {
         console.error('Error logging in user after Google OAuth:', err);
         return next(err);
       }
-      // Redirect to your frontend dashboard (no token)
       res.redirect(`${process.env.FRONTEND_URL}/`); // Uses env variable for frontend URL
     });
   })(req, res, next);

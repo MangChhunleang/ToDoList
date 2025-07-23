@@ -35,11 +35,7 @@ function App() {
                   {/* Protected Routes */}
                   <Route
                     path="/"
-                    element={
-                      <ProtectedRoute>
-                        <TodoDashboard />
-                      </ProtectedRoute>
-                    }
+                    element={<TodoDashboard />}
                   />
 
                   {/* Public Routes */}
