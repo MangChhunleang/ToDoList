@@ -17,7 +17,8 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // API base URL - works for both development and production
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const apiUrl = process.env.REACT_APP_API_URL;
+  window.location.href = `${apiUrl}/api/auth/google`;
 
   useEffect(() => {
     getProfile();

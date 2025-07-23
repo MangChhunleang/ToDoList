@@ -78,11 +78,11 @@ const Login = () => {
       </form>
       <div className="mt-6">
         <a
-          href="http://localhost:5000/api/auth/google"
+          href={`${process.env.REACT_APP_API_URL}/api/auth/google`}
           className="w-full flex items-center justify-center gap-2 bg-white border border-slate-300 text-slate-700 py-2 rounded-lg font-semibold shadow transition hover:bg-slate-50 dark:bg-gray-800 dark:border-gray-600 dark:text-slate-100 dark:hover:bg-gray-700"
         >
           {/* Google icon */}
-          <svg className="h-5 w-5" viewBox="0 0 48 48"><g><path fill="#4285F4" d="M24 9.5c3.54 0 6.73 1.22 9.24 3.23l6.92-6.92C36.3 2.36 30.51 0 24 0 14.82 0 6.73 5.06 2.69 12.44l8.06 6.26C12.6 13.13 17.88 9.5 24 9.5z"/><path fill="#34A853" d="M46.1 24.5c0-1.64-.15-3.22-.42-4.74H24v9.04h12.42c-.54 2.9-2.18 5.36-4.64 7.04l7.18 5.6C43.27 37.27 46.1 31.41 46.1 24.5z"/><path fill="#FBBC05" d="M10.75 28.7c-1.13-3.36-1.13-6.98 0-10.34l-8.06-6.26C.98 15.18 0 19.45 0 24c0 4.55.98 8.82 2.69 12.44l8.06-6.26z"/><path fill="#EA4335" d="M24 48c6.51 0 12.3-2.36 16.16-6.31l-7.18-5.6c-2.01 1.35-4.58 2.14-8.98 2.14-6.12 0-11.4-3.63-13.25-8.7l-8.06 6.26C6.73 42.94 14.82 48 24 48z"/></g></svg>
+          <svg className="h-5 w-5" viewBox="0 0 48 48"><g><path fill="#4285F4" d="M24 9.5c3.54 0 6.73 1.22 9.24 3.23l6.92-6.92C36.3 2.36 30.51 0 24 0 14.82 0 6.73 5.06 2.69 12.44l8.06 6.26C12.6 13.13 17.88 9.5 24 9.5z" /><path fill="#34A853" d="M46.1 24.5c0-1.64-.15-3.22-.42-4.74H24v9.04h12.42c-.54 2.9-2.18 5.36-4.64 7.04l7.18 5.6C43.27 37.27 46.1 31.41 46.1 24.5z" /><path fill="#FBBC05" d="M10.75 28.7c-1.13-3.36-1.13-6.98 0-10.34l-8.06-6.26C.98 15.18 0 19.45 0 24c0 4.55.98 8.82 2.69 12.44l8.06-6.26z" /><path fill="#EA4335" d="M24 48c6.51 0 12.3-2.36 16.16-6.31l-7.18-5.6c-2.01 1.35-4.58 2.14-8.98 2.14-6.12 0-11.4-3.63-13.25-8.7l-8.06 6.26C6.73 42.94 14.82 48 24 48z" /></g></svg>
           Sign in with Google
         </a>
       </div>
