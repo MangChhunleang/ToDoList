@@ -3,7 +3,7 @@ import React from 'react';
 const GoogleLogin = () => {
   const handleGoogleLogin = () => {
     // Always use local backend
-    const apiUrl = 'http://localhost:5000';
+    const apiUrl = process.env.REACT_APP_API_URL;
     window.location.href = `${apiUrl}/api/auth/google`;
   };
 
